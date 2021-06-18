@@ -85,6 +85,20 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <!-- SirBlobman Releases -->
+        <repository>
+            <id>sb-private-releases</id>
+            <url>https://nexus.sirblobman.xyz/repository/private-releases/</url>
+        </repository>
+
+        <!-- SirBlobman Snapshots -->
+        <snapshotRepository>
+            <id>sb-private-snapshots</id>
+            <url>https://nexus.sirblobman.xyz/repository/private-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
     <build>
         <defaultGoal>clean install</defaultGoal>
         <finalName>${bukkit.plugin.name}-${bukkit.plugin.version}</finalName>
