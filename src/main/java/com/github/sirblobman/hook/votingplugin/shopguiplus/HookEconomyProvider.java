@@ -13,6 +13,7 @@ import net.brcdev.shopgui.provider.economy.EconomyProvider;
 
 public final class HookEconomyProvider extends EconomyProvider {
     private final HookPlugin plugin;
+
     public HookEconomyProvider(HookPlugin plugin) {
         this.plugin = Objects.requireNonNull(plugin, "plugin must not be null!");
     }

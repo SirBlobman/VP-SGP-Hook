@@ -2,9 +2,9 @@
 This is a Spigot plugin that adds a CUSTOM economy to ShopGUIPlus based on the points system in VotingPlugin
 
 ## Requirements
-- [Spigot](https://www.spigotmc.org/) 1.13.2 - 1.16.5
-- [ShopGUIPlus](https://www.spigotmc.org/resources/6515/) 1.59.0 or higher.
-- [VotingPlugin](https://www.spigotmc.org/resources/15358/) 6.2.1 or higher.
+- [Spigot](https://www.spigotmc.org/) 1.13.2 - 1.17
+- [ShopGUIPlus](https://www.spigotmc.org/resources/6515/) 1.61.0 or higher.
+- [VotingPlugin](https://www.spigotmc.org/resources/15358/) 6.4 or higher.
 
 ## Economy Setup
 You must enable custom economies in your shop to use VotingPlugin points.  
