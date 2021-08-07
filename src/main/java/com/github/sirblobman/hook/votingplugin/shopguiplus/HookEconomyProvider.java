@@ -29,16 +29,16 @@ public final class HookEconomyProvider extends EconomyProvider {
 
     @Override
     public double getBalance(Player player) {
-        VotingPluginUser votingUser = UserManager.getInstance().getVotingPluginUser(player);
-        return votingUser.getPoints();
+        VotingPluginUser user = getUser(player);
+        return user.getPoints();
     }
 
     @Override
     public void deposit(Player player, double amount) {
         int roundedAmount = (int) Math.floor(amount);
         Runnable task = () -> {
-            VotingPluginUser votingUser = UserManager.getInstance().getVotingPluginUser(player);
-            votingUser.addPoints(roundedAmount);
+            VotingPluginUser user = getUser(player);
+            user.addPoints(roundedAmount);
         };
 
         BukkitScheduler scheduler = Bukkit.getScheduler();
@@ -49,11 +49,16 @@ public final class HookEconomyProvider extends EconomyProvider {
     public void withdraw(Player player, double amount) {
         int roundedAmount = (int) Math.floor(amount);
         Runnable task = () -> {
-            VotingPluginUser votingUser = UserManager.getInstance().getVotingPluginUser(player);
-            votingUser.removePoints(roundedAmount);
+            VotingPluginUser user = getUser(player);
+            user.removePoints(roundedAmount);
         };
 
         BukkitScheduler scheduler = Bukkit.getScheduler();
         scheduler.runTaskAsynchronously(this.plugin, task);
+    }
+    
+    private VotingPluginUser getUser(Player player) {
+        UserManager userManager = UserManager.getInstance();
+        return userManager.getVotingPluginUser(player);
     }
 }
